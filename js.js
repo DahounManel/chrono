@@ -44,11 +44,11 @@ function reset(){
     spn[1].innerHTML =min +"min";
     spn[2].innerHTML =s +"s";
     spn[3].innerHTML =ms +"ms";
-    start_btn.disable = false;
+   
 }
 
 function stop(){
     clearInterval(t);
-    start_btn.disable = false;
+  
    
 }
