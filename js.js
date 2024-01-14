@@ -1,12 +1,12 @@
 var spn, start_btn, stop_btn, t,ms, s, min, h;
-
+t = NaN
 //initialisation des variables
 window.onload = function(){
     spn = document.getElementsByTagName('span');
     console.log(spn);
     start_btn = document.getElementById('start');
     stop_btn = document.getElementById('stop');
-    t;
+    
     ms=0 , s=0, min=0, h=0;
 }
 
@@ -33,7 +33,14 @@ function chrono (){
 }
 
 function start(){
-    t = setInterval(chrono,100);
+    if (t){
+        clearInterval(t)
+        t = setInterval(chrono,100);
+    }else {
+        t = setInterval(chrono,100);
+    }
+
+    
     start_btn.disable = true;
 }
 
@@ -44,11 +51,12 @@ function reset(){
     spn[1].innerHTML =min +"min";
     spn[2].innerHTML =s +"s";
     spn[3].innerHTML =ms +"ms";
-   
+    
 }
 
 function stop(){
     clearInterval(t);
-  
+    console.log(t);
+    
    
 }
